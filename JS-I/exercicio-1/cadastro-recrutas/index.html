@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        body {
+            font: 16pt Arial;
+        }
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            width: 25rem;
+        }
+        span {
+            color: rgb(94, 0, 0);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Faça seu cadastro</h1>
+    <form>
+        <fieldset>
+            <div>
+                <label>Nome: 
+                    <span id="nome"></span>
+                </label>
+            </div>
+            <div>
+                <label>Sobrenome: 
+                    <span id="sobrenome"></span>
+                </label>
+            </div>
+            <div>
+                <label>Campo de estudo: 
+                    <span id="estudo"></span>
+                </label>
+            </div>
+            <div>
+                <label>Ano de nascimento: 
+                    <span id="ano-nasc"></span>
+                </label>
+            </div>
+        </fieldset>
+    </form>
+    <script src="./index.js"></script>
+</body>
+</html>
