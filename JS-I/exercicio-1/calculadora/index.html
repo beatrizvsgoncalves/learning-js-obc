@@ -4,11 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font: 17pt Arial;
+        }
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 80vh;
+        }
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            padding: 1rem;
+            text-align: center;
+            width: 25rem;
+        }
+    </style>
 </head>
 <body>
     <form>
         <fieldset>
+            <p>Resultado das quatro operações básicas entre os números escolhidos:</p>
+            <div id="res"></div>
         </fieldset>
     </form>
+    <script src="./index.js"></script>
 </body>
 </html>
