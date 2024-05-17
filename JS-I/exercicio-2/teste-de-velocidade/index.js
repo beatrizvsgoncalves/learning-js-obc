@@ -7,6 +7,6 @@ if (vel1 > vel2) {
     alert(`O veículo ${veiculo1} é mais rápido que o veículo ${veiculo2}.`)
 } else if (vel2 > vel1) {
     alert(`O veículo ${veiculo2} é mais rápido que o veículo ${veiculo1}.`)
-} else if (vel1 === vel2) {
+} else {
     alert("Ambos os veículos possuem a mesma velocidade.")
 }
