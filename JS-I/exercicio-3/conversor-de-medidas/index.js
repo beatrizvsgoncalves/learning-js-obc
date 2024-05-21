@@ -1,6 +1,12 @@
 let metro = Number(prompt("Digite o número em metro a ser convertido:"));
 let medidaAConverter = prompt(
-	"Escolha a que medida será convertido: (abreviações) \n \n 1. milímetro (mm) \n 2. centímetro (cm) \n 3. decímetro (dm) \n 4. decâmetro (dam) \n 5. hectômetro (hm) \n 6. quilômetro (km)"
+	"Para qual unidade de medida deseja converter? (abreviações) \n" + 
+    "\n 1. milímetro (mm)" +
+    "\n 2. centímetro (cm)" +
+    "\n 3. decímetro (dm)" +
+    "\n 4. decâmetro (dam)" +
+    "\n 5. hectômetro (hm)" + 
+    "\n 6. quilômetro (km)"
 );
 
 switch (medidaAConverter) {
