@@ -18,7 +18,7 @@ function criarProduto(nome, preco) {
 }
 
 console.log(criarProduto("Notebook Intel Core i3 8GB", 2500));
-// Em vez de armazenar esta expressão em uma váriavel, podemos já colocar direto, do mesmo jeito que antes usamos Number(prompt("...")) dá para usar nossas funções próprias, pois no JS é possível chamar uma função em praticamente qualquer lugar. 
+// Em vez de armazenar esta expressão em uma váriavel, podemos já colocar direto, do mesmo jeito que antes usamos Number(prompt("...")) dá para usar nas nossas funções próprias, pois no JS é possível chamar uma função em praticamente qualquer lugar. 
 
 function areaRetangular(base, altura) {
     return base * altura
