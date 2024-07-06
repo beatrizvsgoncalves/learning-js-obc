@@ -1,67 +1,79 @@
-let opcao = ""
+function calcularAreaTriangulo() {
+    const base = prompt("Informe a base do triângulo:")
+    const altura = prompt("Informe a altura do triângulo:")
+    return base * altura / 2
+}
 
-do {
-    opcao = prompt(
-        "CALCULADORA GEOMÉTRICA\n" +
-        "\nEscolha uma das opções de cálculo abaixo:\n" +
-        "\n1. Área do triângulo" +
-        "\n2. Área do retângulo" +
-        "\n3. Área do quadrado" +
-        "\n4. Área do trapézio" +
-        "\n5. Área do círculo" +
-        "\n6. Sair"
+function calcularAreaRetangulo() {
+    const base = prompt("Informe a base do retângulo:")
+    const altura = prompt("Informe a altura do retângulo:")
+    return base * altura 
+}
+
+function calcularAreaQuadrado() {
+    const lado = prompt("Informe o lado do quadrado:")
+    return lado * lado
+}
+
+function calcularAreaTrapezio() {
+    const baseMaior = Number(prompt("Informe a base maior do trapézio:"))
+    const baseMenor = Number(prompt("Informe a base menor do trapézio:"))
+    const altura = prompt("Informe a altura do trapézio:")
+    return (baseMaior + baseMenor) * altura / 2
+}
+
+function calcularAreaCirculo() {
+    const raio = prompt("Informe o raio do círculo:")
+    return 3.14 * raio * raio
+}
+
+function exibirMenu() {
+    return prompt(
+        "CALCULADORA GEOMÉTRICA\n\n" +
+        "Escolha uma das opções de cálculo abaixo:\n\n" +
+        "1. Calcular área de triângulo \n" +
+        "2. Calcular área de retângulo \n" +
+        "3. Calcular área de quadrado \n" +
+        "4. Calcular área de trapézio \n" +
+        "5. Calcular área de círculo \n" +
+        "6. Sair \n"
     )
+}
 
-    function areaTriangulo(base, altura) {
-        base = Number(prompt("Insira o valor da base do triângulo:"))
-        altura = Number(prompt("Insira o valor da altura do triângulo:"))
-        alert("A área de um triângulo com a base de '" + base + "' e a altura de '" + altura + "' é: " + (base * altura / 2))
-    }
+function executar() {
+    let opcao = ""
+
+    do {
+        opcao = exibirMenu()
+        let resultado
     
-    function areaRetangulo(base, altura) {
-        base = Number(prompt("Insira o valor da base do retângulo:"))
-        altura = Number(prompt("Insira o valor da altura do retângulo:"))
-        alert("A área de um retângulo com a base de '" + base + "' e a altura de '" + altura + "' é: " + (base * altura))
-    }
-
-    function areaQuadrado(lado, lado) {
-        lado = Number(prompt("Insira o valor dos lados do quadrado:"))
-        alert("A área de um quadrado com os lados medindo '" + lado + "' é: " + (lado * lado))
-    }
+        switch (opcao)  {
+            case "1":
+                resultado = calcularAreaTriangulo()
+                break
+            case "2":
+                resultado = calcularAreaRetangulo()
+                break
+            case "3":
+                resultado = calcularAreaQuadrado()
+                break
+            case "4":
+                resultado = calcularAreaTrapezio()
+                break
+            case "5":
+                resultado = calcularAreaCirculo()
+                break
+            case "6":
+                alert("Encerrando programa...")
+                break
+            default:
+                alert("Opção inválida! Escolha entre as opções 1-6.")
+        }
     
-    function areaTrapezio(baseMaior, baseMenor, altura) {
-        baseMaior = Number(prompt("Insira o valor da base maior do trapézio:"))
-        baseMenor = Number(prompt("Insira o valor da base menor do trapézio:"))
-        altura = Number(prompt("Insira o valor da altura do trapézio:"))
-        alert("A área de um trapézio com a base maior medindo '" + baseMaior + "', a base menor '" + baseMenor + "' e a altura '" + altura + "', é: " + ((baseMaior + baseMenor) * altura / 2))
-    }
+        if (resultado) {
+            alert("Resultado: " + resultado)
+        }
+    } while (opcao !== "6")
+}
 
-    function areaCirculo(raio, pi = 3.14) {
-        raio = Number(prompt("Insira valor do raio do circulo:"))
-        alert("A área de um circulo com o raio de '" + raio + "' é: " + (pi * (raio * raio)))
-    }
-
-    switch (opcao)  {
-        case "1":
-            areaTriangulo()
-            break
-        case "2":
-            areaRetangulo()
-            break
-        case "3":
-            areaQuadrado()
-            break
-        case "4":
-            areaTrapezio()
-            break
-        case "5":
-            areaCirculo()
-            break
-        case "6":
-            alert("Encerrando programa...")
-            break
-        default:
-            alert("Opção inválida! Escolha entre as opções 1-6.")
-    }
-
-} while (opcao !== "6")
+executar()
