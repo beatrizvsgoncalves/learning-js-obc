@@ -1,7 +1,7 @@
 const lista = [
     {
         nome: "Desenvolvedor Front-End Junior", 
-        descricao: "...",
+        descricao: "Desenvolvedor Front-End Júnior JavaScript, PJ",
         dataLimite: "15/07/2024",
         candidatos: [
             {nome: "Felipe Melo"},
@@ -11,35 +11,35 @@ const lista = [
     },
     {
         nome: "Desenvolverdor Back-End Pleno",
-        descricao: "...",
+        descricao: "Desenvolverdor Back-End Pleno Python",
         dataLimite: "01/08/2024",
         candidatos: [
             {nome: "Jorge Cruz"},
             {nome: "Gabriel Pontes"},
             {nome: "Raquel Souza"}
-
         ]
     }
 ]
 
 function exibirMenu() {
 	return prompt(
-		"Vagas de Emprego\n\n" +
-			"1. Vagas disponíveis\n" +
-			"2. Criar nova vaga\n" +
-			"3. Visualizar uma vaga\n" +
-			"4. Increver candidato\n" +
-			"5. Excluir vaga\n" +
-			"6. Sair"
+		"Cadastro de Vagas de Emprego\n\n" +
+        "Escolha uma das opções:\n" +
+        "1. Listar vagas disponíveis\n" +
+        "2. Criar uma nova vaga\n" +
+        "3. Visualizar uma vaga\n" +
+        "4. Inscrever um(a) candidato(a)\n" +
+        "5. Excluir uma vaga\n" +
+        "6. Sair"
 	);
 }
 
 function listarVagas() {
     lista.forEach(function (vaga, indice) {
         alert(
-            "Vagas disponíveis:\n" +
-            "\nVaga " + (indice + 1) +
-            "\nCargo: " + vaga.nome + 
+            "Vagas disponíveis: " + lista.length + "\n" +
+            "\nVaga nº" + (indice + 1) +
+            "\nNome: " + vaga.nome + 
             "\nCandidatos: " + vaga.candidatos.length
         )
     })
@@ -48,74 +48,86 @@ function listarVagas() {
 function criarVaga() {
     const vaga = {}
 
-    vaga.nome = prompt("Informe o nome da vaga:")
-    vaga.descricao = prompt("Descrição da vaga:")
-    vaga.dataLimite = prompt("Data limite para candidatura:")
+    vaga.nome = prompt("Informe um nome para a vaga:")
+    vaga.descricao = prompt("Informe uma descrição para a vaga:")
+    vaga.dataLimite = prompt("Informe uma data limite (dd/mm/aaaa) para a vaga:")
     vaga.candidatos = []
 
     const confirmacao = confirm(
-        "Salvar esta vaga?\n" +
-        "\nVaga: " + vaga.nome + 
+        "Deseja criar uma nova vaga com essas informações?\n" +
+        "\nNome: " + vaga.nome + 
         "\nDescrição: " + vaga.descricao +
         "\nData limite: " + vaga.dataLimite
     )
 
     if (confirmacao) {
         lista.push(vaga)
-        alert("Vaga salva com sucesso!")
+        alert("Vaga criada.")
     } else {
         alert("Voltando ao menu.")
     }
 }
 
-let nomes = Array()
-
 function visualizarVaga() {
-    const i = Number(prompt("Informe o índice da vaga:")) - 1
-    nomes += lista[i].candidatos.map(function (candidato) {
-        return candidato.nome
-    }).join(", ")
+    const i = Number(prompt("Informe o índice da vaga:"))
+    const vaga = lista[i-1]
 
-    alert(
-        "Detalhes da vaga\n" +
-        "\nVaga: " + (i+1) +
-        "\nNome: " + lista[i].nome +
-        "\nDescrição: " + lista[i].descricao +
-        "\nData limite: " + lista[i].dataLimite +
-        "\nCandidatos: " + lista[i].candidatos.length +
-        "\nNomes dos candidatos: " + nomes + "."
-    )
+    const vagaExiste = lista.find((objetoAtual) => {
+        return objetoAtual === vaga
+    })
+
+    if (vagaExiste) {
+        const candidatos = vaga.candidatos.map(function (candidato) {
+            return candidato.nome
+        }).join(", ")
+
+        alert(
+            "Detalhes da vaga nº " + i + "\n" +
+            "\nNome: " + vaga.nome +
+            "\nDescrição: " + vaga.descricao +
+            "\nData limite: " + vaga.dataLimite +
+            "\nQuantidade de candidatos: " + vaga.candidatos.length +
+            "\nCandidatos: " + candidatos + "."
+        )
+    } else {
+        alert("Essa vaga não existe. Tente novamente.")
+    }
 }
 
 function inscreverCandidato() {
-    const candidato = prompt("Informe o nome do candidato:")
+    const candidato = prompt("Informe o nome do(a) candidato(a):")
     const i = Number(prompt("Informe o índice da vaga:"))
+    const vaga = lista[i-1]
+
     const confirmacao = confirm(
-        "Inscrever o candidato nesta vaga?\n" +
-        "\nVaga: " + i +
-        "\nCargo: " + lista[i-1].nome +
-        "\nDescrição: " + lista[i-1].descricao
+        "Inscrever o(a) candidato(a) na vaga nº " + i + "?\n" +
+        "\nNome: " + vaga.nome +
+        "\nDescrição: " + vaga.descricao +
+        "\nData limite: " + vaga.dataLimite
     )
     
     if (confirmacao) {
-        lista[i].candidatos.push({nome: candidato})
-        nomes += candidato + ", "
+        vaga.candidatos.push({nome: candidato})
+        alert("Inscrição realizada.")
     } else {
-        alert("Voltando ao menu...")
+        alert("Voltando ao menu.")
     }
 }
 
 function excluirVaga() {
-    const i = prompt("Informe o índice da vaga:")
+    const i = prompt("Informe o índice da vaga que deseja excluir:")
+    const vaga = lista[i-1]
+
     const confirmacao = confirm(
-        "Excluir esta vaga?\n" + 
-        "\nVaga: " + lista[i-1].nome +
-        "\nDescrição: " + lista[i-1].descricao
+        "Tem certeza que deseja excluir a vaga " + indice + "?\n" +
+        "\nNome: " + vaga.nome + 
+        "\nDescrição: " + vaga.descricao + 
+        "\nData limite: " + vaga.dataLimite
     )
 
     if (confirmacao) {
-        delete lista[i-1]
-        alert("Vaga excluída com sucesso!")
+        vagas.splice(i, 1)
+        alert("Vaga excluída.")
     } else {
         alert("Voltando ao menu...")
     }
