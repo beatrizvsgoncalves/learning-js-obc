@@ -8,11 +8,24 @@
 </head>
 <body>
     <h1>Escalação do Time</h1>
-
-    <button onclick="lineupPlayer()" id="button">Escalar um jogador</button>
-    <button onclick="removePlayer()">Remover um jogador</button>
     <hr>
-    <section id="form"></section>
-    <section id="players-list"></section>
+    <h2>Escalar Jogador(a)</h2>
+    <p>
+        <label for="position">Posição:</label>
+        <input type="text" name="position" id="position">
+        <label for="name">Nome:</label>
+        <input type="text" name="name" id="name">
+        <label for="number">Número:</label>
+        <input type="text" name="number" id="number">
+        <button onclick="addPlayer()">Escalar</button>
+    </p>
+    <h2>Remover Jogador(a)</h2>
+    <p>
+        <label for="numberToRemove">Número:</label>
+        <input type="text" name="numberToRemove" id="numberToRemove">
+        <button onclick="removePlayer()">Remover</button>
+    </p>
+    <h2>Time</h2>
+    <ul id="teamList"></ul>
 </body>
 </html>
