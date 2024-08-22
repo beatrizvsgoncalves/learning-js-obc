@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Eventos no JavaScript</title>
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <h1>Trabalhando com Eventos no JavaScript</h1>
+    <hr>
+    
+    <h2>Registre-se!</h2>
+    <section>
+        <label for="username">Nome do Usuário:</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <label for="password">Senha:</label>
+        <input type="password" name="password" id="password">
+        <br>
+        <label for="passwordConfirmation">Confirme sua senha:</label>
+        <input type="password" name="passwordConfirmation" id="passwordConfirmation">
+        <br>
+        <button id="register-button">Registrar</button>
+        <button onclick="removeListener()">Remover Event Listener</button>
+    </section>
+
+    <!-- <script src="./index.js"></script> Para não dar erro ao usar eventos DOM, é necessário usar o parâmetro 'defer' se estiver no head ou colocar a tag script no final do body -->
+</body>
+</html>
