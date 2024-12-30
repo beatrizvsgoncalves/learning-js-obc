@@ -2,6 +2,6 @@ export function inline() {
     console.log('Export nomeado inline')
 }
 
-function deafaultInline() {
+export default function deafaultInline() {
     console.log('Export default inline')
 }
