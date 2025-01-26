@@ -1,6 +1,5 @@
-export const resultInput = document.getElementById("result");
-
 export function calculate() {
+    const resultInput = document.getElementById("result");
     resultInput.value = 'ERROR'
     resultInput.classList.add('error')
 

@@ -1,7 +1,7 @@
-const main = document.querySelector("main");
-const root = document.querySelector(":root");
-
 export default function () {
+    const main = document.querySelector("main");
+    const root = document.querySelector(":root");
+    
     if (main.dataset.theme === 'dark') {
         root.style.setProperty('--bg-color', '#f1f5f9')
         root.style.setProperty('--border-color', '#aaa')
