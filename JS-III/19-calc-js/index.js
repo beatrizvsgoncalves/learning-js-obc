@@ -1,7 +1,7 @@
-import themeSwitcher from "./themeSwitcher.js";
-import copyToClipboard from "./copyToClipboard.js";
-import { calculate } from "./calculate.js";
-import { keyboard } from "./keyboard.js";
+import themeSwitcher from "./js/themeSwitcher.js";
+import copyToClipboard from "./js/copyToClipboard.js";
+import { calculate } from "./js/calculate.js";
+import { keyboard } from "./js/keyboard.js";
 
 keyboard()
 document.getElementById("equal").addEventListener("click", calculate);
