@@ -1,8 +1,8 @@
 function redistribuirCombustivel(combustivel) {
     const soma = combustivel.reduce((accum, num) => accum + num)
-    const media = Math.floor(soma / combustivel.length)
-    const decimal = Math.floor(((soma / combustivel.length) - media) * 5)
-
+    let media = Math.floor(soma / combustivel.length)
+    let decimal = Math.floor(((soma / combustivel.length) - media) * combustivel.length)
+    
     let excesso = 0
     let falta = 0
 
@@ -14,11 +14,15 @@ function redistribuirCombustivel(combustivel) {
             falta = media - combustivel[i]
             combustivel[i] += falta
         }
-        combustivel[combustivel.length-1] += decimal
+        
+        if (decimal >= 1) {
+            combustivel[i]++
+            decimal--
+        }
     }
 
     console.log(combustivel)
 }
 
-const combustivel = [12, 5, 8, 5, 6] 
+const combustivel = [12, 5, 8, 3, 6] 
 redistribuirCombustivel(combustivel)
