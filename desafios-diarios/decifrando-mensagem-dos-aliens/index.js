@@ -7,7 +7,7 @@ function decoding() {
     ];
     let decodedMessage = "";
 
-    message.forEach(function (number) {
+    message.forEach(number => {
         if (alphabet[number]) {
             decodedMessage += alphabet[number]
         } else {
