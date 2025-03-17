@@ -12,25 +12,26 @@
 </head>
 <body>
     <section>
+        <p><span id="turnPlayer">Vez de </span></p>
         <div id="players">
-            <label for="player1">Jogador 1</label>
-            <input type="text" name="player1" id="player1">
-            <label for="player2">Jogador 2</label>
-            <input type="text" name="player2" id="player2">
+            <label for="player1">X</label>
+            <input type="text" id="player1" placeholder="Nome do Jogador 1">
+            <label for="player2">O</label>
+            <input type="text" id="player2" placeholder="Nome do Jogador 2">
         </div>
-        <button id="button">JOGAR</button>
+        <button id="start">Começar</button>
     </section>
     <main>
-        <div id="board">
-            <div data-value="1" class="box rounded-top-l"></div>
-            <div data-value="2" class="box"></div>
-            <div data-value="3" class="box rounded-top-r"></div>
-            <div data-value="4" class="box"></div>
-            <div data-value="5" class="box"></div>
-            <div data-value="6" class="box"></div>
-            <div data-value="7" class="box rounded-bt-l"></div>
-            <div data-value="8" class="box"></div>
-            <div data-value="9" class="box rounded-bt-r"></div>
+        <div id="gameBoard">
+            <div data-region="0.0" class="cursor-pointer rounded-top-l"></div>
+            <div data-region="0.1" class="cursor-pointer "></div>
+            <div data-region="0.2" class="cursor-pointer rounded-top-r"></div>
+            <div data-region="1.0" class="cursor-pointer "></div>
+            <div data-region="1.1" class="cursor-pointer "></div>
+            <div data-region="1.2" class="cursor-pointer "></div>
+            <div data-region="2.0" class="cursor-pointer rounded-bt-l"></div>
+            <div data-region="2.1" class="cursor-pointer "></div>
+            <div data-region="2.2" class="cursor-pointer rounded-bt-r"></div>
         </div>
     </main>
 </body>
