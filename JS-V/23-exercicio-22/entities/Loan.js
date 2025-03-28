@@ -5,7 +5,7 @@
 // * Também deverá possuir um atributo para as parcelas do empréstimo, sendo que o construtor deve ter como parâmetro o número de parcelas e então deve calcular as parcelas (instâncias de Installments) e armazená-las nesse atributo.
 
 module.exports = class Loan {
-  static #interestRate = ((100 * 2) / 100);
+  static #interestRate = 3.12;
 
   static get interestRate() {
     return this.#interestRate;
@@ -15,7 +15,7 @@ module.exports = class Loan {
   *  @param {number} percentage
   */
   static set newInterestRate(percentage) {
-    this.#interestRate = ((100 * percentage) / 100);
+    this.#interestRate = ((this.value * percentage) / 100);
   }
 
   constructor(value, installmentsNumber) {
