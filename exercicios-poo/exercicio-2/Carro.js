@@ -1,6 +1,7 @@
 module.exports = class Carro {
-  constructor(marca, modelo) {
+  constructor(marca, modelo, ano) {
     this.marca = marca;
     this.modelo = modelo;
+    this.ano = ano
   }
 }
