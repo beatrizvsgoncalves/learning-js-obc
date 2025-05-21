@@ -3,7 +3,7 @@
 // pendente - pending [estado inicial]
 // resolvida - resolved
 // rejeitada - rejected
-// finalizada - settled
+// finalizada
 
 const p = new Promise((resolve, reject) => {
   console.log('Promise is running');
