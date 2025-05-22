@@ -1,41 +1,33 @@
-function calculateIMC(weight, height) {
+function calculateImc(weight, height) {
   return new Promise((resolve, reject) => {
     if (typeof weight !== 'number' || typeof height !== 'number' ) {
       reject('Valor inválido');
     } else {
-      const imc = weight / (height * height);
-      resolve(imc);
+      resolve(weight / (height * height));
     }
   })
 }
 
-function execute(weight, height) {
-  console.log(`Peso: ${weight}kg`);
-  console.log(`Altura: ${height}`);
-  console.log('Cálculo do IMC iniciado...');
+function showImc(weight, height) {
+  calculateImc(weight, height)
+    .then((result) => {
+      console.log(`O resultado do IMC é de ${result.toFixed(1)}`);
 
-  let imcValue = undefined;
+      if (result < 18.5) console.log('Situação: Magreza');
+      else if (result < 25) console.log('Situação: Normal');
+      else if (result < 30) console.log('Situação: Sobrepeso');
+      else if (result < 40) console.log('Situação: Obesidade');
+      else console.log('Situação: Obesidade grave');
+    })
+    .catch((error) => {
+      console.log(error);
+    })
 
-  calculateIMC(weight, height).then((imc) => {
-    imcValue = imc
-    console.log(`O IMC é de ${imc.toFixed(1)}`);
-  }).catch((error) => {
-    console.log(`Erro: ${error}`);
-  }).finally(() => {
-    if (imcValue < 18.5) {
-      console.log('Categoria do IMC: Magreza');
-    } else if (imcValue >= 18.5 && imcValue < 24.9) {
-      console.log('Categoria do IMC: Normal');
-    } else if (imcValue >= 25 && imcValue < 29.9) {
-      console.log('Categoria do IMC: Sobrepeso');
-    } else if (imcValue >= 30 && imcValue < 39.9) {
-      console.log('Categoria do IMC: Obesidade');
-    } else if (imcValue >= 40) {
-      console.log('Categoria do IMC: Obesidade grave');
-    }
-  })
-
-  console.log('Cálculo do IMC finalizado!');
+    console.log(`Calculando o IMC para peso ${weight} e altura ${height.toFixed(2)}`);
 }
 
-execute(70, 1.75);
+showImc(20, 1.20); // Magreza
+showImc(72, 1.75); // Normal
+showImc("texto", 2.00); // Valor inválido
+showImc(119, 1.80); // Obesidade
+showImc(143, 1.56); // Obesidade Grave
