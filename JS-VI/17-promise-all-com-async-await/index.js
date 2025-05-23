@@ -6,11 +6,11 @@ function waitFor(seconds) {
   })
 }
 
-const numbers = [1, 2, 3, 4, 5]
+const numbers = [11, 23, 73, 94, 35]
 
 async function execute() {
   console.time('map')
-  
+
   const squares = await Promise.all(numbers.map(async (number) => {
     await waitFor(2)
     return number * number
