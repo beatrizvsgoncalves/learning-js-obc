@@ -1,0 +1,60 @@
+{
+  "transfers": [
+    {
+      "id": "1",
+      "amount": 250,
+      "sender": "Jonh",
+      "receiver": "Jane Doe",
+      "date": "2025-05-21"
+    },
+    {
+      "id": "2",
+      "amount": 100,
+      "sender": "Jane Doe",
+      "receiver": "Anne",
+      "date": "2025-05-23"
+    },
+    {
+      "id": "3",
+      "amount": 20,
+      "sender": "Jane Doe",
+      "receiver": "Mark",
+      "date": "2025-05-25"
+    },
+    {
+      "id": "867b",
+      "amount": 45,
+      "sender": "Jane Doe",
+      "receiver": "Jonh",
+      "date": "2025-05-20"
+    },
+    {
+      "id": "bb59",
+      "amount": 45,
+      "sender": "Jane Doe",
+      "receiver": "Jonh",
+      "date": "2025-05-20"
+    },
+    {
+      "id": "ddd7",
+      "amount": 50,
+      "sender": "Jane Doe",
+      "receiver": "Caroline",
+      "date": "2025-05-25"
+    },
+    {
+      "id": "916b",
+      "amount": 15,
+      "sender": "Carl",
+      "receiver": "Jane Doe",
+      "date": "2025-05-25"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Jane Doe",
+      "balance": 830
+    }
+  ]
+}
